@@ -2,6 +2,7 @@ import numpy as np
 import time
 import pygame
 import copy
+import sys
 
 
 def draw_grid(matrix, screen):
@@ -37,7 +38,6 @@ def task_2():  # 7 iterations without random
     iterations = 0
     while True:
         if iterations == 7:
-            print(iterations)
             break
         else:
             iterations += 1
@@ -76,8 +76,11 @@ def task_2():  # 7 iterations without random
 
         matrix = new_matrix.copy()
         time.sleep(1)
-
-    pygame.quit()
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
 
 def task_2_random():  # random and infinite iterations
@@ -138,4 +141,4 @@ def task_2_random():  # random and infinite iterations
 
 
 if __name__ == "__main__":
-    task_2_random()
+    task_2()
