@@ -24,7 +24,6 @@ def main():
                         a[i, j] = np.array(int(input()))
                     except ValueError:
                         print("Please write the numbers")
-                        print(a)
 
             print("B matrix input")
             for i in range(int(b.shape[0])):
@@ -33,7 +32,6 @@ def main():
                         b[i, j] = np.array(int(input()))
                     except ValueError:
                         print("Please write the numbers")
-                        i = 0
             task_1(a, b)
         else:
             break
